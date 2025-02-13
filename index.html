@@ -43,17 +43,23 @@
             outline: none;
             cursor: pointer;
             box-shadow: 0 2px 4px gray;
+            border: 2px solid #e94d58;
         }
         .yes-btn {
-            background: #57e94d;
+            background: greenyellow;
             color: black;
-            border: 2px solid #57e94d;
         }
         .no-btn {
             background: #e94d58;
             color: white;
-            border: 2px solid #e94d58;
             position: relative;
+        }
+        .message {
+            display: none;
+            font-size: 12px;
+            color: white;
+            margin-top: 8px;
+            font-weight: bold;
         }
         @media (max-width: 480px) {
             h2 {
@@ -73,6 +79,7 @@
         <img class="gif" alt="gif" src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"/>
         <div class="btn-group">
             <button class="yes-btn">Yes</button>
+            <p class="message">*kalau kamu gamau gpp kok :)</p>
             <button class="no-btn">No</button>
         </div>
     </div>
@@ -81,10 +88,12 @@
         const gif = document.querySelector(".gif");
         const yesBtn = document.querySelector(".yes-btn");
         const noBtn = document.querySelector(".no-btn");
+        const message = document.querySelector(".message");
 
         yesBtn.addEventListener("click", () => {
             question.innerHTML = "Yay, info yaa kalau ada waktu, chat ajaa";
             gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+            message.style.display = "block";
         });
 
         noBtn.addEventListener("mouseover", () => {
